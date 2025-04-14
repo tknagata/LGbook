@@ -37,14 +37,14 @@ Python パッケージの動作確認済みバージョンは、各章のディ�
 ### Python パッケージのバージョンに起因するエラー
 
 - httpx
-   - openai パッケージが依存する httpx のアップデートにより、`openai==1.40.6` を使用する箇所で `TypeError: Client.__init__() got an unexpected keyword argument 'proxies'` というエラーが発生するようになりました。
-   - このエラーは、`!pip install httpx==0.27.2` のように、httpx の特定バージョンをインストールすることで回避できます。
+  - openai パッケージが依存する httpx のアップデートにより、`openai==1.40.6` を使用する箇所で `TypeError: Client.__init__() got an unexpected keyword argument 'proxies'` というエラーが発生するようになりました。
+  - このエラーは、`!pip install httpx==0.27.2` のように、httpx の特定バージョンをインストールすることで回避できます。
 - pydantic
-   - pydantic のアップデートにより、明示的に pydantic のバージョンを指定していない箇所で ChatOpenAI などを使用すると、`PydanticUserError: 'ChatOpenAI' is not fully defined; you should define 'BaseCache', then call 'ChatOpenAI.model_rebuild()'.` というエラーが発生するようになりました。
-   - このエラーは、`!pip install pydantic==2.10.6` のように、pydantic の特定バージョンをインストールすることで回避できます。
+  - pydantic のアップデートにより、明示的に pydantic のバージョンを指定していない箇所で ChatOpenAI などを使用すると、`PydanticUserError: 'ChatOpenAI' is not fully defined; you should define 'BaseCache', then call 'ChatOpenAI.model_rebuild()'.` というエラーが発生するようになりました。
+  - このエラーは、`!pip install pydantic==2.10.6` のように、pydantic の特定バージョンをインストールすることで回避できます。
 - numpy
-   - Google Colab にデフォルトでインストールされている numpy のバージョンが更新されたことにより、6 章の「Cohere のリランクモデルの導入」箇所などで `ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject` というエラーが発生するようになりました。
-   - このエラーは、`!pip install numpy==1.26.4` のように、numpy の特定バージョンをインストールして、Google Colab の「ランタイム」から「セッションを再起動する」を実行することで回避できます。
+  - Google Colab にデフォルトでインストールされている numpy のバージョンが更新されたことにより、6 章の「Cohere のリランクモデルの導入」箇所などで `ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject` というエラーが発生するようになりました。
+  - このエラーは、`!pip install numpy==1.26.4` のように、numpy の特定バージョンをインストールして、Google Colab の「ランタイム」から「セッションを再起動する」を実行することで回避できます。
 
 > [!WARNING]
 > Google Colab で一度上記のエラーに遭遇したあとで `!pip install httpx==0.27.2` のようにパッケージをインストールし直した場合、以下のどちらかの操作を実施する必要があります。
